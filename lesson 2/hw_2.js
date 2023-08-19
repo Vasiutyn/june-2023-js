@@ -79,9 +79,9 @@ console.log(ten[9].password);
 // Логічні розгалуження:
 // - Є змінна х, якій ви надаєте довільне числове значення.
 let x = 8
-let a = 1 && 0 && -3
+let q = 1 && 0 && -3
 // Якщо змінна x не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'. Перевірте  скрипт при a, що дорівнює 1, 0, -3
-if (x != a) {
+if (x != q) {
     console.log(true);
 } else {
     console.log(false)
@@ -147,12 +147,45 @@ switch (days) {
 // - Користувач вводить або має два числа.
 // Потрібно знайти та вивести максимальне число з тих двох .
 // Також потрібно врахувати коли введені рівні числа.
-//
+let a = prompt('number1');
+let b = prompt('namber2');
+if (a > b) {
+    console.log(a);
+} else if (b > a) {
+    console.log(b);
+} else if (a = b)  {
+    console.log('рівні числа');
+}
+
+
+
 // - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
 // за допомоги  оператора || буде присвоювати змінній х значення "default"  якщо значення змінної х являється falsy (хибноподібні, тобто приводиться до false)
-//
-//
+let r = prompt();
+if (r = undefined || r = null || r = "" || r = 0 || r = NaN) {
+    console.log("default");
+}
+
+
 // - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
-
-
-
+let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
+if (coursesAndDurationArray[0].monthDuration > 5 ) {
+    console.log('Супер');
+} else if (coursesAndDurationArray[1].monthDuration > 5 ) {
+    console.log('Супер');
+} else if (coursesAndDurationArray[2].monthDuration > 5 ) {
+    console.log('Супер');
+} else if (coursesAndDurationArray[3].monthDuration > 5 ) {
+    console.log('Супер');
+} else if (coursesAndDurationArray[4].monthDuration > 5 ) {
+    console.log('Супер');
+} else if (coursesAndDurationArray[5].monthDuration > 5 ) {
+    console.log('Супер');
+}
