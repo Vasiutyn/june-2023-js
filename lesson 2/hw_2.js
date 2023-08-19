@@ -54,26 +54,96 @@ console.log(book4,book5,book6)
 
 // - Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача
 let ten = [
+    {name:'asd',username:'dsvds',password:'vffbfasd'},
     {name:'asd',username:'dsvds',password:'vffbf'},
+    {name:'asd',username:'dsvds',password:'vffqwqwbf'},
+    {name:'asd',username:'dsvds',password:'vfsdfdsf'},
     {name:'asd',username:'dsvds',password:'vffbf'},
+    {name:'asd',username:'dsvds',password:'vsdccsfbf'},
     {name:'asd',username:'dsvds',password:'vffbf'},
-    {name:'asd',username:'dsvds',password:'vffbf'},
-    {name:'asd',username:'dsvds',password:'vffbf'},
-    {name:'asd',username:'dsvds',password:'vffbf'},
-    {name:'asd',username:'dsvds',password:'vffbf'},
-    {name:'asd',username:'dsvds',password:'vffbf'},
-    {name:'asd',username:'dsvds',password:'vffbf'},
+    {name:'asd',username:'dsvds',password:'vffbftryty'},
+    {name:'asd',username:'dsvds',password:'vffgfngnbf'},
     {name:'asd',username:'dsvds',password:'vffbf'}
 ]
-//
-//
+console.log(ten[0].password);
+console.log(ten[2].password);
+console.log(ten[3].password);
+console.log(ten[4].password);
+console.log(ten[5].password);
+console.log(ten[6].password);
+console.log(ten[7].password);
+console.log(ten[8].password);
+console.log(ten[9].password);
+
+
 // Логічні розгалуження:
 // - Є змінна х, якій ви надаєте довільне числове значення.
+let x = 8
+let a = 1 && 0 && -3
 // Якщо змінна x не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'. Перевірте  скрипт при a, що дорівнює 1, 0, -3
+if (x != a) {
+    console.log(true);
+} else {
+    console.log(false)
+}
+
+
 // - Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає число
 // (в першу, другу, третю или четверту частину години).
+let time = 32
+if (0>=time || time<=14) {
+    console.log('першу');
+} else if (15>=time || time<=29) {
+    console.log('другу');
+} else if (30>=time || time<=44) {
+    console.log('третю');
+} else if (45>=time || time<=60) {
+    console.log('четверту');
+}
+
+
 // - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
+let day = 14
+if (1>=day || day<=10) {
+    console.log('першу');
+} else if (11>=day || day<=20) {
+    console.log('другу');
+} else if (21>=day || day<=31) {
+    console.log('третю');
+}
+
+
 // - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
+let days = prompt('порядковий номер дня тижня?')
+switch (days) {
+    case '1':
+        console.log('Monday');
+        break;
+    case '2':
+        console.log('Tuesday');
+        break;
+    case '3':
+        console.log('Wednesday');
+        break;
+    case '4':
+        console.log('Thursday');
+        break;
+    case '5':
+        console.log('Friday');
+        break;
+    case '6':
+        console.log('Saturday');
+        break;
+    case '7':
+        console.log('Sunday');
+        break;
+
+    default:
+        console.log('??????')
+}
+
+
+
 // - Користувач вводить або має два числа.
 // Потрібно знайти та вивести максимальне число з тих двох .
 // Також потрібно врахувати коли введені рівні числа.
