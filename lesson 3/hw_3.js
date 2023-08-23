@@ -10,3 +10,5 @@ let users = [
     {name: 'masha', age: 30, status: true},
     {name: 'olya', age: 31, status: false},
     {name: 'max', age: 31, status: true}
+
+console.log(users.length)
