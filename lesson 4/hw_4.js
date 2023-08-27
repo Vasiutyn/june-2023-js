@@ -122,6 +122,15 @@ console.log(unswer1);
 
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
+const swap = [11, 22, 33, 44]
+function funkswap(arr, index1, index2) {
+    let a = arr[index1]
+    let b = arr[index2]
+   arr[index1] = b
+    arr[index2] = a
+    console.log(arr)
+}
+funkswap(swap, 0, 2)
 
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
