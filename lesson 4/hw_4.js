@@ -92,18 +92,37 @@ block(2, 'vira', 23)
 // ----------------------------------------------------------------------
 
 // - створити функцію яка повертає найменьше число з масиву
-const arr = [4, 5, 3, 1, 2];
-let min = arr[0]
-for (let num of arr) {
-    if (min > num) {
-        num = min
+const numbers = [6, 3, 2, 7, 1, 9, 0];
+function nameMin(numbers) {
+    let min = numbers[0];
+    for (let num of numbers) {
+        if (min > num) {}
+        min = num
     }
+    return min
 }
-console.log(min)
+let unswer = nameMin(numbers);
+console.log(unswer);
+// ----------------------------------------------------------------------
 
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
+const arrs = [6, 3, 2, 7, 1, 9, 0];
+function f(arrs) {
+    let sum = arrs[0]
+    for (let num of arrs) {
+        if (sum + num) {
+            sum = sum + num;
+        }
+    }
+    return sum
+}
+let unswer1 = f(arrs);
+console.log(unswer1);
+// ----------------------------------------------------------------------
+
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
+
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
 
