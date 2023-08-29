@@ -131,7 +131,17 @@ function funkswap(arr, index1, index2) {
     console.log(arr)
 }
 funkswap(swap, 0, 2)
+// ----------------------------------------------------------------------
 
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
 
+
+function exchange(sumUAH,currency,exchangeCurrency) {
+    for (let item of currency) {
+        if (item.currency === exchangeCurrency) {
+            return
+        }
+    }
+}
+exchange(10000, [{currency:'USD',value:40},{currency:'EUR',value:42}], 'USD' )
