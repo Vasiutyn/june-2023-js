@@ -1,28 +1,70 @@
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
-function sumapr(a, b) {
-    return a * b
-}
-sumapr(2, 5)
+const sumapr = (a, b) => a * b;
+console.log(sumapr(2, 5))
+console.log(sumapr(2, 7))
 // ----------------------------------------------------------------------
 
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
-function kolo(r) {
-    const p = 3.14
-    r = r * r
-    return p * r
-}
-kolo(3)
+const kolo = (r) => Math.PI * r * r
+    console.log(kolo(5))
+    console.log(kolo(7))
 // ----------------------------------------------------------------------
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
-function clnd(h, r) {
-    const p = 3.14
-    return 2 * p * h * r
-}
-clnd(6, 5)
-// ----------------------------------------------------------------------
+const clnd = (h,r) => 2 * Math.PI * h * r
+console.log(clnd(5, 6));
+console.log(clnd(8, 6));
 
 // - створити функцію яка приймає масив та виводить кожен його елемент
+const funkname = (masvs) => {
+    for (masv of masvs) {
+        console.log(`item:`, masv)
+    }
+}
+funkname([5,'ona', true, 2])
+// ----------------------------------------------------------------------
+
+// - створити функцію яка створює параграф з текстом. Текст задати через аргумент
+const funword = (text) => {
+    document.write(`<p>${text}</p>`);
+}
+funword('ona two 3');
+// ----------------------------------------------------------------------
+
+// - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
+const funli = (text) => {
+    document.write(`<ul>`)
+    for (let i = 0; i < 3; i++) {
+        document.write(`<li>${text}</li>`)
+    }
+    document.write(`</ul>`)
+}
+funli('red black')
+// ----------------------------------------------------------------------
+
+// - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
+const funul = (text, number) => {
+    document.write(`<ul>`)
+    for (let i = 0; i < number; i++) {
+        document.write(`<li>${text}</li>`)
+    }
+    document.write(`</ul>`)
+}
+funul('wite ten',5)
+// ----------------------------------------------------------------------
+
+// - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
+const funul3 = (arr) => {
+    document.write(`<ul>`)
+    for (item of arr){
+        document.write(`<li>${item}</li>`)
+    }
+    document.write(`</ul>`)
+}
+funul3(['ona', 5, false, 'yellow', 0, true])
+// ----------------------------------------------------------------------
+
+// - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
 let users = [
     {name: 'vasya', age: 31, status: false},
     {name: 'petya', age: 30, status: true},
@@ -36,113 +78,71 @@ let users = [
     {name: 'olya', age: 31, status: false},
     {name: 'max', age: 31, status: true}
 ];
-function funkname(masv) {
+const funknam = (masv) => {
     for (content of masv) {
-        console.log(content)
+        document.write(`
+        <div>
+        <p>name: ${content.name}</p>
+        <p>age: ${content.age}</p>
+        <p>status: ${content.status}</p>
+        </div>
+        `)
     }
 }
-funkname(users)
-// ----------------------------------------------------------------------
-
-// - створити функцію яка створює параграф з текстом. Текст задати через аргумент
-function funword(a) {
-    document.write(`<p>${a}</p>`)
-}
-funword("asdasdasd")
-// ----------------------------------------------------------------------
-
-// - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
-function firstLI(a) {
-    document.write(`<ul>`);
-
-       for (let i = 0; i < 3;  i++) {
-           document.write(`<li>${a}</li>`)
-       }
-    document.write(`</ul>`);
-}
-firstLI('asdasdsadascs')
-// ----------------------------------------------------------------------
-
-// - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
-function two(t, n) {
-    document.write(`<ul>`);
-
-    for (let i = 0; i < n; i++) {
-        document.write(`<li>${t}</li>`)
-    }
-    document.write(`</ul>`);
-}
-two('mierda', 2);
-// ----------------------------------------------------------------------
-
-// - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
-function element(...arr) {
-    console.log(Array.from(arguments));
-}
-element(1, 2, 'asds', 'ppdpcp', true, false)
-// ----------------------------------------------------------------------
-
-// - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
-function block(id, name, age) {
-    document.write(`<div>ID: - ${id}</div>`);
-    document.write(`<div>Name: - ${name}</div>`);
-    document.write(`<div>Age: - ${age}</div>`);
-}
-block(2, 'vira', 23)
+funknam(users)
 // ----------------------------------------------------------------------
 
 // - створити функцію яка повертає найменьше число з масиву
-const numbers = [6, 3, 2, 7, 1, 9, 0];
-function nameMin(numbers) {
-    let min = numbers[0];
-    for (let num of numbers) {
-        if (min > num) {}
-        min = num
+const min = (arr) => {
+    let minnumber = arr[0]
+    for (let number of arr) {
+        if (minnumber > number) {
+            minnumber = number
+        }
     }
-    return min
+    return minnumber
 }
-let unswer = nameMin(numbers);
+let unswer = min([6, 3, 2, 7, 1, 9, 0])
 console.log(unswer);
 // ----------------------------------------------------------------------
 
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
-const arrs = [6, 3, 2, 7, 1, 9, 0];
-function f(arrs) {
-    let sum = arrs[0]
-    for (let num of arrs) {
+const funksum = (arr) => {
+    let sum = arr[0]
+    for (num of arr) {
         if (sum + num) {
-            sum = sum + num;
+            sum = sum + num
         }
     }
     return sum
 }
-let unswer1 = f(arrs);
-console.log(unswer1);
+let unswer2 = funksum([6, 3, 2, 7, 1, 9, 0]);
+console.log(unswer2);
 // ----------------------------------------------------------------------
 
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
-const swap = [11, 22, 33, 44]
-function funkswap(arr, index1, index2) {
-    let a = arr[index1]
-    let b = arr[index2]
-   arr[index1] = b
+const swap = (arr,index1,index2) => {
+    let a = arr[index1];
+    let b = arr[index2];
+    arr[index1] = b
     arr[index2] = a
     console.log(arr)
 }
-funkswap(swap, 0, 2)
+swap([11,22,33,44],0,1)
+
 // ----------------------------------------------------------------------
 
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
-
-
-function exchange(sumUAH,currency,exchangeCurrency) {
-    for (let item of currency) {
+const exchange = (sumUAH,currencyValues,exchangeCurrency) => {
+    for (let item of currencyValues) {
         if (item.currency === exchangeCurrency) {
-            return  sumUAH / item.value
+            resualt = sumUAH / item.value
         }
     }
+    return resualt
 }
-let resualt = exchange(10000, [{currency:'USD',value:40},{currency:'EUR',value:42}], 'USD' )
-console.log(resualt);
+let unsw = exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD')
+console.log(unsw);
+
