@@ -44,8 +44,10 @@ stringToarray(str1)
 
 // - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
 let number = [10,8,-7,55,987,-1011,0,1050,0]
-number.map(u => u.toString())
-number
+let strn = number.map((num) => {
+    return num.toString()
+})
+console.log(strn)
 //---------------------------------------------------------------------
 
 
@@ -72,17 +74,38 @@ sortNums('ascending')
 
 // ==========================
 // - є масив
-// let coursesAndDurationArray = [
-//     {title: 'JavaScript Complex', monthDuration: 5},
-//     {title: 'Java Complex', monthDuration: 6},
-//     {title: 'Python Complex', monthDuration: 6},
-//     {title: 'QA Complex', monthDuration: 4},
-//     {title: 'FullStack', monthDuration: 7},
-//     {title: 'Frontend', monthDuration: 4}
-// ];
+let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
 // -- відсортувати його за спаданням за monthDuration
 // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
 // -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
+let sortmin = coursesAndDurationArray.sort((u1,u2) => {
+    return u1.monthDuration - u2.monthDuration
+})
+console.log(sortmin)
+//--
+let sortmor = coursesAndDurationArray.filter((u) =>  {
+    return u.monthDuration > 5
+})
+console.log(sortmor)
+//--
+function uuidv4() {
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
+}
+
+let push = coursesAndDurationArray.map((value => {
+    value.id = uuidv4()
+    return value
+}))
+console.log(coursesAndDurationArray)
 // =========================
 //     описати колоду карт (від 6 до туза без джокерів)
 // - знайти піковий туз
