@@ -35,8 +35,21 @@ console.log(sortusr);
 // - створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
 function client(id, name, surname , email, phone, order) {
     user.call(this, id, name, surname , email, phone)
-    this.order
+    this.order = order;
 }
+const clients = [
+    new client(1,'sdsd', 'a', 'sdd', '3442342', ['qweqwe', 'qwwqdq', 'cgbbgcb']),
+    new client(2,'sdsdsd', 'asdad', 'sdfdfd', '34142342342', ['qweqwe', 'qwwqdq', 'cgbbgcb']),
+    new client(3,'sdsdsd', 'asdad', 'sdssdfsdfdfd', '34142342342', ['qweqwe', 'qwwqdq', 'cgbbgcb']),
+    new client(4,'sdsdsd', 'asdad', 'sdfdfd', '34142342342', ['qweqwe', 'qwwqdq', 'cgbbgcb']),
+    new client(5,'sdsdsd', 'asdad', 'sdfdfd', '34142342342', ['qweqwe', 'qwwqdq', 'cgbbgcb']),
+    new client(6,'sdsdsd', 'asdad', 'sxcvcxdfdfd', '34142342342', ['qweqwe', 'qwwqdq', 'cgbbgcb']),
+    new client(7,'sdsdsd', 'asdad', 'sdfdfd', '34142342342', ['qweqwe', 'qwwqdq', 'cgbbgcb']),
+    new client(8,'sdsdsd', 'asdad', 'sdfdfd', '34142342342', ['qweqwe', 'qwwqdq', 'cgbbgcb']),
+    new client(9,'sdsdsd', 'asdad', 'sdfdfd', '34142342342', ['qweqwe', 'qwwqdq', 'cgbbgcb']),
+    new client(10,'sdsdqwsd', 'asdadqw', 'sdfqwedfd', '34142342342', ['qweqwe', 'qwwqdq', 'cgbbgcb'])
+];
+console.log(clients);
 // створити пустий масив, наповнити його 10 об'єктами Client
 // - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
 //
