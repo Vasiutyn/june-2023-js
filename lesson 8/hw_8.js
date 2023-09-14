@@ -196,6 +196,12 @@ class Prints extends Human {
         super(name, age);
         this.bootsize =bootsize
     }
+
+    findprintses(arr) {
+        for (const Popelushka of arr) {
+            if (Popelushka.foot)
+        }
+    }
 }
 
 const popelArr = [
