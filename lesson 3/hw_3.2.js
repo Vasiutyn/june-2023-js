@@ -1,4 +1,4 @@
-const { title } = require("process");
+
 
 // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
 for (let i = 0; i < 10; i++) {
@@ -107,19 +107,25 @@ let users = [
 //  - користувачів зі статусом false
 //  - користувачів які старші за 30 років
 for (let user of users) {
-	if (user['status'] === true) {
-		document.write(`<div>${user}</div>`)
+	if (user['status']) {
+		document.write(`<hr/>`)
+        document.write(`<div>Name:${user.name} <br/>Age:${user.age}<br/>Status:${user.status}</div>`)
+        document.write(`<hr/>`)
 	}
 };
 
 for (let user of users) {
 	if (!user['status']) {
-		document.write(`<div>${user}</div>`)
+		document.write(`<hr/>`)
+        document.write(`<div>Name:${user.name} <br/>Age:${user.age}<br/>Status:${user.status}</div>`)
+        document.write(`<hr/>`)
 	}
 };
 
 for (let user of users) {
 	if (user['age'] > 30) {
-		document.write(`<div>${user}</div>`)
+		document.write(`<hr/>`)
+        document.write(`<div>Name:${user.name} <br/>Age:${user.age}<br/>Status:${user.status}</div>`)
+        document.write(`<hr/>`)
 	}
 };
